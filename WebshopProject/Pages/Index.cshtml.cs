@@ -4,22 +4,18 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace WebshopProject.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
-
-        public IndexModel(ILogger<IndexModel> logger)
-        {
-            _logger = logger;
-        }
-
+        public List<Models.Product> GetProducts { get; set; }
         public void OnGet()
         {
-
+            GetProducts = Data.ApiManager.GetProducts();
         }
     }
 }
