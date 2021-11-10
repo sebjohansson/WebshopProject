@@ -10,16 +10,19 @@
 </head>
 <body>
     <div class="grid-container">
-        <div>
-            @foreach (var prod in Model.GetProducts)
+        
+        @foreach (var prod in Model.GetProducts)
             {
-                <p>@prod.id</p>
+            <div class="grid-item">
                 <p>@prod.title</p>
+                <img src="@prod.image" height="250">
                 <p>@prod.price</p>
                 <p>@prod.category</p>
-                <p>@prod.rating</p>
-            }
-        </div>
+                <p>@prod.rating.rate</p>
+                <p>@prod.rating.count</p>
+            </div>
+         }
+        
     </div>
 
 </body>

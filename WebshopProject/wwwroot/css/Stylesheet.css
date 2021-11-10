@@ -2,17 +2,18 @@
 
 }
 .grid-container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-gap: 10px;
-  background-color: white;
-  padding: 10px;
+    display: grid;
+    grid-template-rows: 250px 250px 250px 250px;
+    grid-template-columns: 250px 250px 250px 250px;
+    grid-gap: 150px;
+    background-color: white;
+    padding: 10px;
 }
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
 }
 
 

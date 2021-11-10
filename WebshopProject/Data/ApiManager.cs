@@ -9,7 +9,7 @@ namespace WebshopProject.Data
 {
     public class ApiManager
     {
-        public static Models.Product GetProducts()
+        public static List<Models.Product> GetProducts()
         {
             var httpClient = new HttpClient();
             var options = new JsonSerializerOptions
@@ -18,7 +18,7 @@ namespace WebshopProject.Data
             };
             var response = httpClient.GetAsync("https://fakestoreapi.com/products").GetAwaiter().GetResult();
             var apiResponse = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-            return JsonSerializer.Deserialize<Models.Product>(apiResponse);
+            return JsonSerializer.Deserialize<List<Models.Product>>(apiResponse);
         }
     }
 }
