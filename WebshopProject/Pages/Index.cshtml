@@ -11,9 +11,13 @@
 <body>
     <div class="grid-container">
         <div>
-            @foreach (var prod in Model.GetProduct)
+            @foreach (var prod in Model.GetProducts)
             {
-                
+                <p>@prod.id</p>
+                <p>@prod.title</p>
+                <p>@prod.price</p>
+                <p>@prod.category</p>
+                <p>@prod.rating</p>
             }
         </div>
     </div>

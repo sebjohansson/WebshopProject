@@ -12,10 +12,10 @@ namespace WebshopProject.Pages
 {
     public class IndexModel : PageModel
     {
-        public List<Models.Product> GetProducts { get; set; }
+        public IEnumerable<Models.Product> GetProducts { get; set; }
         public void OnGet()
         {
-            GetProducts = Data.ApiManager.GetProducts();
+            GetProducts = (IEnumerable<Models.Product>)Data.ApiManager.GetProducts();
         }
     }
 }
