@@ -10,16 +10,72 @@
   
 </head>
 <body>
+    <div class="slideshow-container">
+
+        <div class="mySlides">
+            <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" style="height: 300px">
+            <div class="text">Caption Text</div>
+        </div>
+
+        <div class="mySlides">
+            <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" style="height: 300px">
+            <div class="text">Caption Two</div>
+        </div>
+
+        <div class="mySlides">
+            <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" style="height: 300px">
+            <div class="text">LELEELELELELELELELELELELELELELELELEELELE</div>
+        </div>
+    </div>
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    <!--Slideshow JS-->
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    <!--Searchbar-->
+    <h1>@Model.Search</h1>
+    <form method="post">
+        <input type="text" id="q" asp-for="@Model.Search" placeholder="Search for products"/>
+    </form>
+    <!--Product Grid-->
     <div class="grid-container">
         @foreach (var prod in Model.GetProducts)
         {
             <div class="grid-item">
-                    <p>@prod.title</p>
-                    <img src="@prod.image" height="120">
-                    <p>@prod.price kr</p>
-                    <p>@prod.category</p>
-                    <p>@prod.rating.rate</p>
-                    <p>@prod.rating.count</p>
+                <img src="@prod.image" height="120" >
+                <p><b>@prod.title</b></p>
+                <p>@prod.price kr</p>
             </div>
         }
     </div>

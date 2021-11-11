@@ -1,10 +1,11 @@
 ﻿.grid-container {
     display: grid;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 1fr, 1fr, 1fr, 1fr;
     grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
-    background-color: black;
+    grid-gap: 35px;
+    background-color: white;
     padding: 10px;
+    max-width: 150px;
 }
 
 .grid-item {
@@ -12,10 +13,8 @@
     padding: 20px;
     font-size: 30px;
     text-align: center;
-}
-/* Bordered form */
-form {
-    border: 3px solid #f1f1f1;
+    font-family: Arial;
+    font-size: medium;
 }
 
 /* Full-width inputs */
@@ -30,13 +29,12 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #04AA6D;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
+    float: none;
+    display: block;
+    text-align: left;
     width: 100%;
+    margin: 0;
+    padding: 14px;
 }
 
     /* Add a hover effect for buttons */
@@ -84,4 +82,45 @@ span.psw {
     .cancelbtn {
         width: 100%;
     }
+}
+* {
+    box-sizing: border-box
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: fit-content;
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img{
+    position: center;
+}
+
+/* Caption text */
+.text {
+    color: black;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
 }

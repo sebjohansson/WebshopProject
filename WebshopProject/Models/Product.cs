@@ -20,7 +20,4 @@ namespace WebshopProject.Models
         public float rate { get; set; }
         public int count { get; set; }
     }
-    
-    
-
 }
