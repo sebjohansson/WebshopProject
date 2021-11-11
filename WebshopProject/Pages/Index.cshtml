@@ -6,23 +6,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="Stylesheet.css">
+<link rel="stylesheet" href="~/css/Stylesheet.css">
+  
 </head>
 <body>
     <div class="grid-container">
-        
         @foreach (var prod in Model.GetProducts)
-            {
+        {
             <div class="grid-item">
-                <p>@prod.title</p>
-                <img src="@prod.image" height="250">
-                <p>@prod.price</p>
-                <p>@prod.category</p>
-                <p>@prod.rating.rate</p>
-                <p>@prod.rating.count</p>
+                    <p>@prod.title</p>
+                    <img src="@prod.image" height="120">
+                    <p>@prod.price kr</p>
+                    <p>@prod.category</p>
+                    <p>@prod.rating.rate</p>
+                    <p>@prod.rating.count</p>
             </div>
-         }
-        
+        }
     </div>
 
 </body>

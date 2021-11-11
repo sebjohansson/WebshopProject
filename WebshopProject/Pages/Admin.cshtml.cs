@@ -8,9 +8,14 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 namespace WebshopProject.Pages
 {
     public class AdminModel : PageModel
-    {
+    {     
         public void OnGet()
         {
+        }
+
+        public void OnPost()
+        {
+
         }
     }
 }
