@@ -35,48 +35,30 @@
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
     <!--Slideshow JS-->
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script>
+    <script src="~/js/site.js"></script>
     <!--Searchbar-->
     <h1>@Model.Search</h1>
     <form method="post">
-        <input type="text" id="q" asp-for="@Model.Search" placeholder="Search for products"/>
+        <input type="text" id="q" asp-for="@Model.Search" placeholder="Search for products" />
     </form>
+    <!--Navbar sidan-->
+    <div class="sidenav">
+        <a href="#">Home</a>
+        <a href="#">Produkter</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+
     <!--Product Grid-->
     <div class="grid-container">
         @foreach (var prod in Model.GetProducts)
         {
-            <div class="grid-item">
-                <img src="@prod.image" height="120" >
-                <p><b>@prod.title</b></p>
-                <p>@prod.price kr</p>
-            </div>
+        <div class="grid-item">
+            <img src="@prod.image" height="120">
+            <p><b>@prod.title</b></p>
+            <p>@prod.price kr</p>
+            <p><button>Add to Cart</button></p>
+        </div>
         }
     </div>
 

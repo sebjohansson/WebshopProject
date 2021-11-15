@@ -24,10 +24,12 @@ namespace WebshopProject.Pages
         public void OnPost()
         {
             GetProducts = (IEnumerable<Models.Product>)Data.ApiManager.GetProducts();
-            Search = Search;
-
-            string search = Search.ToLower();
-            GetProducts = GetProducts.Where(m => m.title.ToLower().Contains(search));
+            if(Search != null)
+            {
+                string search = Search.ToLower();
+                GetProducts = GetProducts.Where(m => m.title.ToLower().Contains(search));
+            }
+          
         }
     }
 }
