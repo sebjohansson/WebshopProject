@@ -1,19 +1,14 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace WebshopProject.Pages
 {
-    public class IndexModel : PageModel
+    public class Product_pageModel : PageModel
     {
-        
         public IEnumerable<Models.Product> GetProducts { get; set; }
 
         [BindProperty]
@@ -27,14 +22,13 @@ namespace WebshopProject.Pages
         public void OnPost()
         {
             GetProducts = (IEnumerable<Models.Product>)Data.ApiManager.GetProducts();
-            if(Search != null)
+            if (Search != null)
             {
                 string search = Search.ToLower();
                 GetProducts = GetProducts.Where(m => m.title.ToLower().Contains(search));
             }
 
-           
-          
+
         }
     }
 }

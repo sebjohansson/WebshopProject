@@ -20,5 +20,6 @@ namespace WebshopProject.Data
             var apiResponse = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
             return JsonSerializer.Deserialize<List<Models.Product>>(apiResponse);
         }
+
     }
 }

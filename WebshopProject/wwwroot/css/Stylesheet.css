@@ -124,3 +124,6 @@ span.psw {
 .active {
     background-color: #717171;
 }
+.show {
+    display: block;
+}
