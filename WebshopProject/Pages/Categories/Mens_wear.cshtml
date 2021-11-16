@@ -1,13 +1,12 @@
 ﻿@page
-@model IndexModel
+@model WebshopProject.Pages.Categories.MensModel
 @{
-    ViewData["Title"] = "Home page";
 }
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="~/css/Stylesheet.css">
-  
+    <link rel="stylesheet" href="~/css/Stylesheet.css">
+
 </head>
 <body>
     <div class="slideshow-container">
@@ -49,7 +48,6 @@
         <a href="/Categories/Jewelery">Jewelery</a>
         <a href="/Categories/Mens_wear">Men's clothing'</a>
         <a href="/Categories/Womens_wear">Women's clothing'</a>
-
     </div>
 
     <!--Product Grid-->
@@ -64,7 +62,6 @@
             <p>@prod.price kr</p>
             <p style="font-size: 15px">@prod.rating.count Left</p>
             <p><button>Add to Cart</button></p>
-
         </div>
         }
     </div>
