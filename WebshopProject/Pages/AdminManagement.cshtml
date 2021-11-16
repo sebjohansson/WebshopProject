@@ -1,6 +1,34 @@
 ﻿@page
 @model WebshopProject.Pages.AdminManagementModel
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Manage Products";
 }
 <h1>@ViewData["Title"]</h1>
+
+<!--Search-->
+<form method="post">
+    <input type="text" id="q" asp-for="@Model.Search" placeholder="Search for products" />
+</form>
+
+<!--Table list-->
+<table class="table">
+    <tr>
+        <th>Title</th>
+        <th>ID</th>
+    </tr>
+    @foreach (var item in Model.GetProducts)
+    {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.id)</td>
+            <td>@Html.DisplayFor(modelItem => item.title)</td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
