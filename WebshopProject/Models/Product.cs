@@ -8,7 +8,6 @@ namespace WebshopProject.Models
 {
     public class Product
     {
-        [Key]
         public int id { get; set; }
         public string title { get; set; }
         public float price { get; set; }
@@ -19,6 +18,7 @@ namespace WebshopProject.Models
     }
     public class Rating
     {
+        [Key]
         public float rate { get; set; }
         public int count { get; set; }
     }
