@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WebshopProject.Pages
+namespace WebshopProject.Pages.Admin
 {
-    public class AdminManagementModel : PageModel
+    public class ManagementModel : PageModel
     {
         public IEnumerable<Models.Product> GetProducts { get; set; }
         [BindProperty]

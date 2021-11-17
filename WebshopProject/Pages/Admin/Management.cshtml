@@ -1,5 +1,5 @@
 ﻿@page
-@model WebshopProject.Pages.AdminManagementModel
+@model WebshopProject.Pages.Admin.ManagementModel
 @{
     ViewData["Title"] = "Manage Products";
 }
@@ -13,8 +13,8 @@
 <!--Table list-->
 <table class="table">
     <tr>
-        <th>Title</th>
         <th>ID</th>
+        <th>Title</th>
     </tr>
     @foreach (var item in Model.GetProducts)
     {

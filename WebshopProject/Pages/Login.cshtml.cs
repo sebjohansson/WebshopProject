@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace WebshopProject.Pages
+namespace WebshopProject.Pages.Admin
 {
-    public class AdminModel : PageModel
-    {     
+    public class LoginModel : PageModel
+    {
         public void OnGet()
         {
         }
