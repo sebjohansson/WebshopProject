@@ -1,6 +1,6 @@
 ﻿@page
 @model IndexModel
-@{
+@{   
     ViewData["Title"] = "Home page";
 }
 <!DOCTYPE html>
@@ -10,6 +10,12 @@
   
 </head>
 <body>
+    <h1>Cart</h1>
+    @foreach (var cart in Model.Cart)
+            {
+                <h3>@cart.title</h3>
+            }
+    
     <div class="slideshow-container">
 
         <div class="mySlides">
@@ -56,16 +62,16 @@
     <div class="grid-container">
         @foreach (var prod in Model.GetProducts)
         {
-        <div class="grid-item">
-            <a href="/product_page">
-                <img src="@prod.image" height="120">
-            </a>
-            <p><b>@prod.title</b></p>
-            <p>@prod.price kr</p>
-            <p style="font-size: 15px">@prod.rating.count Left</p>
-            <p><button>Add to Cart</button></p>
+            <div class="grid-item">
+                <a href="/product_page">
+                    <img src="@prod.image" height="120">
+                </a>
+                <p><b>@prod.title</b></p>
+                <p>@prod.price kr</p>
+                <p style="font-size: 15px">@prod.rating.count Left</p>
+                <a asp-route-productId="@prod.id">Add to cart</a>
 
-        </div>
+            </div>
         }
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
