@@ -29,7 +29,7 @@ namespace WebshopProject.Pages
                 Data.CartManager.AddCart(product);
             }
         }
-        public void OnPost()
+        public void OnPost(int productId)
         {
             GetProducts = (IEnumerable<Models.Product>)Data.ApiManager.GetProducts();
             if(Search != null)
@@ -37,8 +37,12 @@ namespace WebshopProject.Pages
                 string search = Search.ToLower();
                 GetProducts = GetProducts.Where(m => m.title.ToLower().Contains(search));
             }
-            
 
+            if (productId != 0)
+            {
+                var product = GetProducts.Where(m => m.id == productId).FirstOrDefault();
+                Data.CartManager.AddCart(product);
+            }
 
         }
     }
