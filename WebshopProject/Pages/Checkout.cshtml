@@ -1,6 +1,8 @@
 ﻿@page
 @model WebshopProject.Pages.CheckoutModel
-@{
+@{ Model.Cart.Count();
+    float PriceSum = 0;
+    Math.Round(PriceSum, 2);
 }
 <html>
 <head>
@@ -80,26 +82,26 @@
                 Cart
                 <span class="price" style="color:black">
                     <i class="fa fa-shopping-cart"></i>
-                    <b>4</b>
+                    <b>@Model.Cart.Count()</b>
                 </span>
             </h4>
             @foreach (var prod in Model.Cart)
             {
                 <p>@prod.title</p>
                 <p>@prod.price</p>
-
+                PriceSum += prod.price;
             }
             <form action="/action_page.php">
-                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                <input type="checkbox" id="Delivery1" name="Delivery1" value="DHL">
                 <label for="Delivery1"> DHL: 39 kr</label><br>
-                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                <label for="Delivery2"> Postnord: Free </label><br>
-                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <input type="checkbox" id="Delivery2" name="Delivery2" value="Post nord">
+                <label for="Delivery2"> Post nord: Free </label><br>
+                <input type="checkbox" id="Delivery3" name="Delivery3" value="Express">
                 <label for="Delivery3"> Express Delivery: 69 kr</label><br><br>
                 <input type="submit" value="Checkout" asp-page="Checkout">
             </form>
             <hr>
-            <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+            <p>Total <span class="price" style="color:black"><b>@PriceSum kr + Frakt</b></span></p>
         </div>
     </div>
 </div>
