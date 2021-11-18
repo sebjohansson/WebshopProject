@@ -55,13 +55,13 @@
         @foreach (var prod in Model.GetProducts)
         {
         <div class="grid-item">
-            <a href="/product_page">
+            <div class="grid-item">
                 <img src="@prod.image" height="120">
-            </a>
-            <p><b>@prod.title</b></p>
-            <p>@prod.price kr</p>
-            <p style="font-size: 15px">@prod.rating.count Left</p>
-            <p><button>Add to Cart</button></p>
+                <p><b>@prod.title</b></p>
+                <p>@prod.price kr</p>
+                <p style="font-size: 15px">@prod.rating.count Left</p>
+                <a asp-route-productId="@prod.id">Add to cart</a>
+            </div>
         </div>
         }
     </div>

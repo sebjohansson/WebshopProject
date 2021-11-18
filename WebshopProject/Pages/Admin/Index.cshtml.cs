@@ -22,7 +22,7 @@ namespace WebshopProject.Pages.Admin
         public IList<Product> Product { get;set; }
 
         public async Task OnGetAsync()
-        {
+        {         
             Product = await _context.Product.ToListAsync();
         }
     }

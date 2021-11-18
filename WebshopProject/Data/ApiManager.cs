@@ -19,7 +19,7 @@ namespace WebshopProject.Data
             var response = httpClient.GetAsync("https://fakestoreapi.com/products").GetAwaiter().GetResult();
             var apiResponse = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
             return JsonSerializer.Deserialize<List<Models.Product>>(apiResponse);
-        }
+        }       
 
     }
 }

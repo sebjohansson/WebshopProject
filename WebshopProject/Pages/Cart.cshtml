@@ -4,7 +4,7 @@
     float PriceSum = 0;
     Math.Round(PriceSum, 2);
 }
-<h3>Cart filled with goodies</h3>
+<h3 style="font-size: 100px">Cart</h3>
 
 @foreach (var prod in Model.Cart)
             {  
@@ -19,3 +19,10 @@
 }
 
 <h3>Totala priset är @PriceSum kr</h3>
+
+<h2>Kostnad på frakt:</h2>
+<p>DHL: 39 kr</p>
+<p>Postnord: Free kr</p>
+<p>Express Delivery: 69 kr</p>
+
+<a asp-page="Checkout">Checkout </a>
