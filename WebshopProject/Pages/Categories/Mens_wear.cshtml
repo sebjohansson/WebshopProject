@@ -10,20 +10,19 @@
 </head>
 <body>
     <div class="slideshow-container">
-
         <div class="mySlides">
             <img src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg" style="height: 300px">
-            <div class="text">Caption Text</div>
+            <div class="text">Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</div>
         </div>
 
         <div class="mySlides">
             <img src="https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg" style="height: 300px">
-            <div class="text">Caption Two</div>
+            <div class="text">Mens Casual Premium Slim Fit T-Shirts</div>
         </div>
 
         <div class="mySlides">
             <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" style="height: 300px">
-            <div class="text">LELEELELELELELELELELELELELELELELELEELELE</div>
+            <div class="text">Mens Cotton Jacket</div>
         </div>
     </div>
     <br>
@@ -53,18 +52,17 @@
     <!--Product Grid-->
     <div class="grid-container">
         @foreach (var prod in Model.GetProducts)
-        {
-        <div class="grid-item">
-            <div class="grid-item">
-                <img src="@prod.image" height="120">
-                <p><b>@prod.title</b></p>
-                <p>@prod.price kr</p>
-                <p style="font-size: 15px">@prod.rating.count Left</p>
-                <a asp-route-productId="@prod.id">Add to cart</a>
-            </div>
-         </div>
-         }
-     </div>
+        {           
+                <div class="grid-item">
+                    <img src="@prod.image" height="120">
+                    <p><b>@prod.title</b></p>
+                    <p>@prod.price kr</p>
+                    <p style="font-size: 15px">@prod.rating.count Left</p>
+                    <a asp-route-productId="@prod.id">Add to cart</a>
+                </div>
+
+        }
+    </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
