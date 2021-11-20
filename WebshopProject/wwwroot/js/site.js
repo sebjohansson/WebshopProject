@@ -28,3 +28,31 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
 }
+
+//Consent cookie
+const cookieStorage = {
+    getItem: (item) => {
+        const cookies = document.cookie
+            .split(';')
+            .map(cookie => cookie.split('='))
+            .reduce((acc, [key, value]) => ({ ...acc, [key.trim()]: value }), {});
+        return cookies[item];
+    },
+    setItem: (item, value) => {
+        document.cookie = `${item}=${value};`
+    }
+}
+
+const storageType = cookieStorage;
+const consentProperty = "webstore_consent";
+const showPopup = () => !storageType.getItem(consentProperty);
+const saveToStorage = () => storageType.setItem(consentProperty, true);
+
+window.onload = () => {
+    if (showPopup()) {
+        const consent = confirm('Do you give consent to the terms and conditions?')
+        if (consent) {
+            saveToStorage();
+        }
+    }
+}
