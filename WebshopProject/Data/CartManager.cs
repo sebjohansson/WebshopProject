@@ -16,7 +16,7 @@ namespace WebshopProject.Data
 
         public static List<Models.Product> AddCart(Models.Product cartProduct)
         {
-            
+            cartProduct.rating.count--;
             Cart.Add(cartProduct); // Exempel på att lägga till i kundkorgen
             return Cart;
         }
