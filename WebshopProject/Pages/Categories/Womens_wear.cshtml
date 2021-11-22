@@ -53,13 +53,14 @@
     <div class="grid-container">
         @foreach (var prod in Model.GetProducts)
         {
-            <div class="grid-item">
-                <img src="@prod.image" height="120">
-                <p><b>@prod.title</b></p>
-                <p>@prod.price kr</p>
-                <p style="font-size: 15px">@prod.rating.count Left</p>
-                <a asp-route-productId="@prod.id">Add to cart</a>
-            </div>
+        <div class="grid-item">
+            <img src="@prod.image" height="120">
+            <p><b>@prod.title</b></p>
+            <p>@prod.price kr</p>
+            <p>@prod.description</p>
+            <p style="font-size: 15px">@prod.rating.count Left</p>
+            <a asp-route-productId="@prod.id">Add to cart</a>
+        </div>
         }
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
