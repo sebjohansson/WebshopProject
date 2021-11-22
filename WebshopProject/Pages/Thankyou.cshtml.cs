@@ -4,18 +4,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WebshopProject.Data;
 
-namespace WebshopProject.Pages.Admin
+namespace WebshopProject.Pages
 {
-    public class LoginModel : PageModel
+    public class ThankyouModel : PageModel
     {
         public void OnGet()
         {
-        }
-
-        public void OnPost()
-        {
-
+            CartManager.Cart.Clear();
         }
     }
 }
+
